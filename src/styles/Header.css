@@ -1,0 +1,46 @@
+.header-cont{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white ;
+}
+.header-link{
+    margin: 0px 30px;
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+    transition: all 0.1s;
+}
+
+.contact-header-link{
+    position: absolute;
+    right: 10px;
+}
+
+.header-link:hover{
+    transform: scale(1.1);
+    color: black;
+}
+
+.header-link::after{
+    content : '';
+    display: block;
+    margin-top: 4px;
+    transform: scaleX(0);
+    height: 2px;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.header-link:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.open-to-work{
+    position: absolute;
+    right: 130px;
+    margin-top: 15px;
+    color: red;
+}

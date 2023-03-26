@@ -1,0 +1,19 @@
+.modal-question{
+    width: 140px;
+}
+.modal-ans{
+    width: 300px;
+}
+.pop-btn{
+    border: none;
+    background-color: transparent;
+}
+
+.poper{
+    background-color:rgb(13,110,253);
+    color:white;
+    border-radius:5px;
+    font-size: 10px;
+    padding: 5px 10px;
+    margin-left: 10px;
+}

@@ -1,0 +1,25 @@
+.project-details-cont{
+    padding: 100px;
+}
+.project-details-heading{
+    margin: 10px 0px;
+    /* font-size: 30px; */
+}
+.project-details-para , .project-details-li{
+    color: rgb(31, 29, 29);
+    font-size: 16px;
+
+}
+
+.project-details-link{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    margin-top: 30px;
+}
+.project-details-link:hover{
+    color: rgb(71, 69, 69);
+}
+.project-details-arrow-icon{
+    margin-left: 10px;
+}

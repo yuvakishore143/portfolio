@@ -1,0 +1,102 @@
+.project-item{
+    font-family: sans-serif;
+    width: 400px;
+    height: 300px;
+    margin-top: -160px;
+    margin-right: 20px;
+    transition: transform .20s ease-in-out;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid gray;
+}
+
+.project-item:hover{
+    transform:scale(1.05) ;
+}
+.hover-cont{
+  background-color: #e0e1e2;
+  position: absolute; 
+  width: 100%;
+  height: 200px;
+  transform: translateY(250px);
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: transform .25s ease-in-out;
+}
+.link{
+    text-decoration: none;
+    color: gray;
+}
+.project-item:hover .hover-cont {
+    transform: translateY(50px);
+}
+.project-item:hover .project-heading {
+    transform: translateY(-80px);
+}
+
+.project-heading{
+    text-align: center;
+    transition: transform .25s ease-in-out;
+    font-weight: bold;
+    font-size: 30px;
+}
+.hover-external-link-cont{
+    position: absolute;
+    bottom:0px;
+    width: 100%;
+    left: 0px;
+    padding:0px 0px 10px 20px
+}
+.tech-list-items{
+    list-style: none;
+    color: gray;
+}
+
+.know-more-link{
+    color: white;
+    text-decoration: none;
+}
+.know-more-link:hover{
+    color: white;
+}
+.view-icon{
+    margin-left: 5px;
+}
+.hover-text-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width:468px) {
+    .project-heading{
+        font-size: 1.2em;
+    }
+    .project-item{
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+    }
+    .mobile-link{
+        color: white;
+        text-decoration: none;
+        position: absolute;
+        transform: translateX(-25%);
+        bottom: 0px;
+        background-color: rgb(65, 64, 64);
+        padding: 2px 5px;
+        width: 100%;
+        border-radius: 0px 0px 10px 10px;
+        text-align: center;
+    }
+}

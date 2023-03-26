@@ -1,0 +1,37 @@
+
+.about-cont{
+    padding: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100vh;
+}
+.about-headings{
+    font-size: 20px;
+    margin: 10px 0px;;
+}
+.per-det{
+    margin: 0px ;
+    margin-left: 38px;
+}
+
+.personal-ans{
+    color:gray;
+}
+.about-headings::after{
+    content: ' : :';
+}
+.about-headings::before{
+    content: ' : : ';
+}
+.resume-link{
+    color: white;
+    text-decoration: none;
+}
+.resume-link:hover{
+    color: white;
+    transform: scaleX(2);
+}
+.per-para{
+    margin-left: 38px;
+}
