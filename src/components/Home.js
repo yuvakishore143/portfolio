@@ -4,6 +4,9 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import Skills from "../components/particles/Skills.js";
 import Projects from "./particles/Projects";
 import Footer from "./particles/Footer";
+import '../styles/Projects.css'
+
+import { Carousal } from "./particles/Carousal";
 
 class Home extends Component {
   state = {
@@ -64,14 +67,14 @@ class Home extends Component {
         language: "JQUERY",
         order: ["order-0", "order-1"],
         imgUrl:
-          "https://www.vectorlogo.zone/logos/jquery/jquery-ar21.png",
+          "jquery-removebg-preview.png",
       },
       {
         id: 10,
         language: "TYPESCRIPT",
         order: ["order-0", "order-1"],
         imgUrl:
-          "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_typescript_icon_130108.png",
+          "typescript-logo-528x194-removebg-preview.png",
       },
     ],
     projects: [{id : 1 , name : 'ArtDock' , tech:['React Js' , 'Html & Css' , 'FireBase'] , link : "https://artdock-ea1ac.web.app/Game"}, {id : 2 , name :'Portfolio' ,  tech:['React Js' , 'Html & Css ']}],
@@ -80,25 +83,27 @@ class Home extends Component {
   render() {
     const { skills, projects } = this.state;
     return (
-      <div className="home-cont d-flex flex-column">
-        <div className="landing-cont">
+      <div className="home-cont">
+        {/* <div className="landing-cont">
           <h1 className="landing-heading heading-one">I build intelligent and </h1>
           <h1 className="landing-heading heading-two">impactful websites that work.</h1>
+        </div > */}
+        <div className="landing-cont">
+          <Carousal/>
         </div>
-        <div>
+        <div className="whole-project-cont">
           <h1 className="home-headings headings">
             SEE MY WORK
             <BsFillArrowRightCircleFill className="arrow-icon" />
           </h1>
-          <div className="projects-cont"></div>
-        </div>
-        <div className="projects-cont d-flex">
+          <div className="projects-cont d-flex">
           {projects.map((item) => (
             <Projects details = {item} key = {item.id} />
           ))}
+          </div>
         </div>
         <div>
-          <h1 className="home-headings headings">
+          <h1 className="home-headings headings skill-heading">
             SKILLS <BsFillArrowRightCircleFill className="arrow-icon" />{" "}
           </h1>
           <ul className="skills-cont">

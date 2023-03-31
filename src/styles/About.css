@@ -5,10 +5,56 @@
     justify-content: space-around;
     flex-direction: column;
     height: 100vh;
+    
 }
+
+.personal-details{
+    animation: leftAnimate 1s .2s ease-in-out forwards ;
+    opacity: 0;
+}
+
+@keyframes leftAnimate {
+    0%{
+        opacity: 0;
+        transform: translateX(-4rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+@keyframes rightAnimate {
+    0%{
+        opacity: 0;
+        transform: translateX(4rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
+.personal-info{
+    animation: rightAnimate 1s .7s ease-in-out forwards ;
+    opacity: 0;
+}
+
+.personal-interests{
+    animation: leftAnimate 1s 1.2s ease-in-out forwards ;
+    opacity: 0;
+}
+
+.resume-cont{
+    animation: rightAnimate 1s 1.5s ease-in-out forwards ;
+    opacity: 0;
+}
+
 .about-headings{
     font-size: 20px;
-    margin: 10px 0px;;
+    margin: 10px 0px;
+
 }
 .per-det{
     margin: 0px ;

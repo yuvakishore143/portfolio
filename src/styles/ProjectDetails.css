@@ -1,6 +1,20 @@
 .project-details-cont{
     padding: 100px;
+    opacity: 0;
+    animation: det-animation 1s .25s ease-in-out forwards;
 }
+
+@keyframes det-animation {
+    0%{
+        opacity: 0;
+        transform: translateX(-3rem);
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
 .project-details-heading{
     margin: 10px 0px;
     /* font-size: 30px; */
@@ -22,4 +36,15 @@
 }
 .project-details-arrow-icon{
     margin-left: 10px;
+}
+
+.back-btn-cont{
+    justify-content: flex-end;
+}
+.back-link{
+    text-decoration: none;
+    color: white;
+}
+.back-link:hover{
+    color: white;
 }

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { FcAbout } from "react-icons/fc";
 import { IoIosContact } from "react-icons/io";
@@ -12,12 +12,12 @@ const Header = () => {
     const [show , setShow] = useState(false)
   return (
     <div className="header-cont">
-      <Link className="header-link d-none d-md-block " to="/">
+      <NavLink className="header-link d-none d-md-block " to="/">
         HOME
-      </Link>
-      <Link className="header-link d-none d-md-block" to="/about">
+      </NavLink>
+      <NavLink className="header-link d-none d-md-block" to="/about">
         ABOUT
-      </Link>
+      </NavLink>
       <p className="open-to-work">: : Open for work : :</p>
         <button
          className=" d-none d-md-block contact-header-link btn btn-secondary"
@@ -29,15 +29,15 @@ const Header = () => {
         <Contact show = {show} onHide= {()=>setShow(false)} />
 
       {/* small-devices */}
-      <Link className="header-link  d-md-none" to="/">
+      <NavLink className="header-link  d-md-none" to="/">
         <AiOutlineHome />
-      </Link>
-      <Link className="header-link d-md-none" to="/about">
+      </NavLink>
+      <NavLink className="header-link d-md-none" to="/about">
         <IoIosContact />
-      </Link>
-      <Link className="header-link  d-md-none" to="/contact">
+      </NavLink>
+      <NavLink className="header-link  d-md-none" to="/contact">
         <FcAbout />
-      </Link>
+      </NavLink>
     </div>
   );
 };
