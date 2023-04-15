@@ -1,83 +1,66 @@
-
-.about-cont{
+.about-cont {
     padding: 100px;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     height: 100vh;
-    
-}
 
-.personal-details{
-    animation: leftAnimate 1s .2s ease-in-out forwards ;
-    opacity: 0;
 }
 
 @keyframes leftAnimate {
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(-4rem);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0);
     }
-    
-}
-@keyframes rightAnimate {
-    0%{
-        opacity: 0;
-        transform: translateX(4rem);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-    
+
 }
 
-.personal-info{
-    animation: rightAnimate 1s .7s ease-in-out forwards ;
+.personal-details,
+.personal-info,
+.personal-interests,
+.resume-cont {
+    animation: leftAnimate 1s calc(var(--order) * 200ms) ease-in-out forwards;
     opacity: 0;
 }
 
-.personal-interests{
-    animation: leftAnimate 1s 1.2s ease-in-out forwards ;
-    opacity: 0;
-}
-
-.resume-cont{
-    animation: rightAnimate 1s 1.5s ease-in-out forwards ;
-    opacity: 0;
-}
-
-.about-headings{
+.about-headings {
     font-size: 20px;
     margin: 10px 0px;
 
 }
-.per-det{
-    margin: 0px ;
+
+.per-det {
+    margin: 0px;
     margin-left: 38px;
 }
 
-.personal-ans{
-    color:gray;
+.personal-ans {
+    color: gray;
 }
-.about-headings::after{
+
+.about-headings::after {
     content: ' : :';
 }
-.about-headings::before{
+
+.about-headings::before {
     content: ' : : ';
 }
-.resume-link{
+
+.resume-link {
     color: white;
     text-decoration: none;
 }
-.resume-link:hover{
+
+.resume-link:hover {
     color: white;
     transform: scaleX(2);
 }
-.per-para{
+
+.per-para {
     margin-left: 38px;
 }

@@ -1,9 +1,9 @@
 import "../../styles/Projects.css";
-import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { BsArrowRightCircle } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Projects = ({ details }) => {
-  console.log(details.tech);
+  const { color } = details;
   return (
     <div className="project-item">
       <div className="text-content">
@@ -16,15 +16,15 @@ const Projects = ({ details }) => {
       <div className="hover-cont">
         <div className="hover-text-cont">
           <div className="project-info d-none d-md-block">
-            <span className="d-block headings">TECHNOLOGIES USED : </span>
+            <span className="d-block inner-heading ">TECHNOLOGIES USED : </span>
             <ul className="tech-lists">
               {details.tech.map((item) => (
                 <li className="tech-list-items">{item}</li>
               ))}
             </ul>
           </div>
-          <button className=" btn btn-secondary">
-            <Link className="know-more-link" to={`/projects/${details.name}`}>
+          <button className=" btn know-btn">
+            <Link className="know-more-link" to={`/projects/${details.id}`}>
               Know More
             </Link>
           </button>
@@ -35,7 +35,7 @@ const Projects = ({ details }) => {
               <a className="link" href={details.link} target="_blank">
                 Visit Website
               </a>
-              <BsFillArrowRightCircleFill className="arrow-icon view-icon" />
+              <BsArrowRightCircle className="arrow-icon view-icon" />
             </div>
           )}
         </div>

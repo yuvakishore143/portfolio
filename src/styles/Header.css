@@ -1,11 +1,14 @@
-.header-cont{
+.header-cont {
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white ;
+    color: white;
+    /* background-color: #ecc286; */
 }
-.header-link{
+
+
+.header-link {
     margin: 0px 30px;
     text-decoration: none;
     font-size: 17px;
@@ -13,18 +16,18 @@
     transition: all 0.1s;
 }
 
-.contact-header-link{
+.contact-header-link {
     position: absolute;
     right: 10px;
 }
 
-.header-link:hover{
+.header-link:hover {
     transform: scale(1.1);
     color: black;
 }
 
-.header-link::after{
-    content : '';
+.header-link::after {
+    content: '';
     display: block;
     margin-top: 4px;
     transform: scaleX(0);
@@ -33,19 +36,20 @@
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
-.header-link:hover::after{
+
+.header-link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.open-to-work{
+.open-to-work {
     position: absolute;
     right: 130px;
     margin-top: 15px;
     color: red;
 }
 
-.active{ 
+.active {
     color: black;
     font-weight: bold;
 }
