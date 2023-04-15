@@ -17,6 +17,12 @@ const Header = () => {
       <NavLink className="header-link d-none d-md-block" to="/about">
         ABOUT
       </NavLink>
+      <NavLink className="header-link d-none d-md-block" to="/skills">
+        Skills
+      </NavLink>
+      <NavLink className="header-link d-none d-md-block" to="/projects">
+        Recent Works
+      </NavLink>
       <p className="open-to-work">: : Open for work : :</p>
       <button
         className=" d-none d-md-block contact-header-link btn btn-secondary"

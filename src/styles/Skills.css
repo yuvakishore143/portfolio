@@ -7,12 +7,40 @@
     align-items: center;
     transition: 0.3s ease-in-out;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    /* border: 1px solid rgb(218, 217, 217); */
     border-bottom: none;
     width: 150px !important;
     overflow: hidden;
     border-radius: 10px;
     background-color: #f4cd97;
+}
+
+.skills-cont {
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.skill-page {
+    background-color: #1a1f61;
+    height: 90vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+}
+
+.skill-title-img-cont {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-img {
+    max-width: 500px;
+
 }
 
 

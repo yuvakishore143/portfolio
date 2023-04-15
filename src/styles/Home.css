@@ -1,23 +1,24 @@
 .landing-cont {
     margin: 0px 0px 100px 0px;
-    /* animation: comeFromTop 2s .25s cubic-bezier(0 , .5 , 0 , 1) forwards; */
 }
 
-.arrow-icon {
-    margin-left: 20px;
+.home-cont {
+    background-image: url("");
+    background-color: #1a1f61;
+    height: 100vh;
 }
 
-.skills-cont {
-    padding: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.home-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 20px;
+    padding: 100px;
 }
 
-.slider {
-    width: 95%;
-    margin: auto;
-
+.home-heading {
+    color: white;
+    font-size: 30px;
+    text-align: center;
 }
 
 .no-project-text {
@@ -26,8 +27,6 @@
     transform: translateX(-6%);
     color: orange;
     padding: 20px 0px;
-
-
 }
 
 .home-headings {
@@ -51,10 +50,6 @@
 .home-headings:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-}
-
-.skill-heading {
-    margin-top: 20px;
 }
 
 
