@@ -1,0 +1,107 @@
+:root {
+    --bgColor: linear-gradient(to bottom, #2d9fd4, #a2d4dd);
+    /* --bgColor:linear-gradient(to bottom, #1a1f61, #5258af); */
+}
+
+@keyframes fromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+}
+
+@keyframes fromBottom {
+
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    /* background-color: #6dbcd9; */
+    background-color: transparent;
+    transition: all 2s ease-out;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+    border-radius: 10px;
+    transition: all 2s ease-out;
+    opacity: 0;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.remove-right-exited {
+    animation: movesLeft .5s ease-in-out forwards !important;
+    opacity: 0;
+}
+
+.remove-left-exited {
+    animation: movesRight .5s ease-in-out forwards !important;
+    opacity: 0;
+}
+
+@keyframes movesLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+}
+
+@keyframes movesRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+}

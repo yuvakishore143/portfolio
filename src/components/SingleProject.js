@@ -18,8 +18,20 @@ const details = [
     siteLink: "https://artdock-ea1ac.web.app/Game",
   },
   {
-    projectName: "Portfolio Website",
+    projectName: "Jobby App",
     id: "2",
+    minPara: "This is one of my biggest project",
+    theme:
+      "This project is to find the jobs for any user.In this project the user can search for the jobs based on position or salary. the user can also directly search for a certain role using search bar.But the user first need to login using credentials.for now the only the combination of username : 'rahul' and password : 'rahul@2021' is allowed. so if you want to enter the app please use this credentials.Here fetching is done from the external api for the jobs part.",
+    technologies: [
+      "This project is solely build using react js ",
+      "For the design part Html and Css is used.",
+    ],
+    siteLink: "https://yuvakishoreja.ccbp.tech",
+  },
+  {
+    projectName: "Portfolio Website",
+    id: "3",
     minPara: "This is my second project.",
     theme:
       "This is my personal website where all my projects and skill will bestored. There is no backend as the info is manually entered",
@@ -31,7 +43,7 @@ const details = [
   },
   {
     projectName: "Wikipedia Search",
-    id: "4",
+    id: "5",
     minPara: "",
     theme:
       " The project is build as a part of my full-stack development course. Inthis project we can search for anything that can be found inwikipedia.It's just a like a mini search engine",
@@ -42,20 +54,8 @@ const details = [
     siteLink: "https://yuvakishorewsa.ccbp.tech/",
   },
   {
-    projectName: "Jobby App",
-    id: "5",
-    minPara: "This is one of my biggest project",
-    theme:
-      "This project is to find the jobs for any user.In this project the user can search for the jobs based on position or salary. the user can also directly search for a certain role using search bar.But the user first need to login using credentials.for now the only the combination of username : 'rahul' and password : 'rahul@2021' is allowed. so if you want to enter the app please use this credentials.Here fetching is done from the external api for the jobs part.",
-    technologies: [
-      "This project is solely build using react js ",
-      "For the design part Html and Css is used.",
-    ],
-    siteLink: "https://yuvakishoreja.ccbp.tech",
-  },
-  {
     projectName: "Emoji Game",
-    id: "3",
+    id: "4",
     minPara: "",
     theme:
       "This project is built as part of my full-stack development course.This is a very fun project in this project the player has to pick all the emojis without pressing the same emoji twice. As the player selects the emoji the points will be awarded. the highest score will be shown at the top right. This game also need a high memory game so it comes as both fun and educational game. ",

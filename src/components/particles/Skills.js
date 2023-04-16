@@ -1,7 +1,11 @@
+import { useState } from "react";
 import "../../styles/Skills.css";
+import "../../styles/Universal.css";
 import Header from "../Header";
+import { useNavigate } from "react-router-dom";
 
 const Skills = () => {
+  const [removePage, setRemovePage] = useState(false);
   const skills = [
     {
       id: 1,
@@ -69,21 +73,37 @@ const Skills = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
+  const animationHandler = () => {
+    setRemovePage(true);
+    return () => {
+      setRemovePage(false);
+    };
+  };
+
+  const onAboutClick = () => {
+    navigate("/home");
+    setTimeout(() => {
+      const aboutEl = document.querySelector("#aboutInHome");
+      aboutEl.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  };
+
   return (
-    <div style={{ backgroundColor: "#1a1f61" }}>
-      <Header />
-      <div className="skill-page">
-        <ul className="skills-cont">
+    <div className="skill-whole-page d-flex flex-column">
+      <Header func={animationHandler} aboutFun={onAboutClick} />
+      <div className="skill-page row justify-content-between">
+        <ul
+          className={`${
+            removePage ? "remove-right-exited" : ""
+          } skills-cont col-sm-12 col-md-6`}
+        >
           {skills.map((item) => (
             <li className="skill-list col-5 col-md-3">
               <div className="skill-min-cont">
-                <div className="skill-img-cont">
-                  <img
-                    className="skill-list-img"
-                    src={item.imgUrl}
-                    alt={item.language}
-                  />
-                </div>
                 <div className="skill-text-cont">
                   <p className="skill-name">{item.language}</p>
                 </div>
@@ -91,7 +111,11 @@ const Skills = () => {
             </li>
           ))}
         </ul>
-        <div className="skill-title-img-cont">
+        <div
+          className={`${
+            removePage ? "remove-left-exited" : ""
+          } skill-title-img-cont col-sm-12 col-md-5 d-flex justify-content-center`}
+        >
           <img
             src="soft-skills-1536x1536-removebg-preview.png"
             alt="skill-img"

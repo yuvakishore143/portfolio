@@ -1,16 +1,15 @@
 import { useState } from "react";
 import "../../styles/Projects.css";
-import { BsArrowRightCircle, BsFillArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import "../../styles/Universal.css";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { Link, useNavigate } from "react-router-dom";
 
-import Slider from "react-slick";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Header from "../Header";
+import Footer from "./Footer";
 
-const Projects = ({ details }) => {
+const Projects = () => {
   const [tag, setTag] = useState("All");
+  const [removePage, setRemovePage] = useState(false);
   const projects = [
     {
       id: 1,
@@ -19,103 +18,61 @@ const Projects = ({ details }) => {
       link: "https://artdock-ea1ac.web.app/Game",
     },
     {
-      id: 5,
+      id: 2,
       name: "Jobby App",
       tech: ["React Js", "Html & Css"],
       link: "https://yuvakishoreja.ccbp.tech",
     },
     {
-      id: 2,
+      id: 3,
       name: "Portfolio",
       tech: ["React Js", "Html & Css"],
     },
     {
-      id: 3,
+      id: 4,
       name: "Emoji Game",
       tech: ["React Js", "Html & Css"],
       link: "https://yuvakishoreeg.ccbp.tech/",
     },
     {
-      id: 4,
+      id: 5,
       name: "Wikipedia Search",
       tech: ["React Js", "Html & Css"],
       link: "https://yuvakishorewsa.ccbp.tech",
     },
   ];
 
-  const SamplePrevArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-          display: "block",
-          background: "#BEB7B7",
-          borderRadius: "50%",
-          border: "none",
-        }}
-        onClick={onClick}
-      >
-        hello
-      </div>
-    );
-  };
+  const navigate = useNavigate();
 
   let filteredList = projects;
   if (tag !== "All") {
     filteredList = projects.filter((item) => item.tech.includes(tag));
   }
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: filteredList.length > 1 ? 4 : 1,
-    slidesToScroll: 2,
-    prevArrow: <SamplePrevArrow />,
-    nextArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1600,
-        settings: {
-          slidesToShow: filteredList.length > 1 ? 3 : 1,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: filteredList.length > 1 ? 2 : 1,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  const animationHandler = () => {
+    setRemovePage(true);
+    console.log("hello");
+    return () => {
+      setRemovePage(false);
+    };
+  };
+
+  const onAboutClick = () => {
+    navigate("/home");
+    setTimeout(() => {
+      const aboutEl = document.querySelector("#aboutInHome");
+      aboutEl.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
   };
 
   return (
     <div className="whole-project-cont">
-      <Header />
-      <div className="d-flex justify-content-between mx-3 align-items-center ">
-        <div>
-          <h1 className="home-headings headings">
-            SEE MY WORK
-            <BsFillArrowRightCircleFill className="arrow-icon" />
-          </h1>
-        </div>
-        <div>
-          <select onChange={(e) => this.setState({ tag: e.target.value })}>
+      <Header func={animationHandler} aboutFun={onAboutClick} />
+      <div className="project-min-cont">
+        <div className="d-flex justify-content-end mx-5 ">
+          <select onChange={(e) => setTag(e.target.value)}>
             <option value="All">All</option>
             <option value="Html & Css">HTML & CSS</option>
             <option value="React Js">React Js</option>
@@ -123,58 +80,63 @@ const Projects = ({ details }) => {
             <option value="Python">Python</option>
           </select>
         </div>
-      </div>
-      {filteredList.length === 0 ? (
-        <h1 className=" no-project-text">In Progress...</h1>
-      ) : (
         <div className="projects-cont">
-          <Slider className="slider" {...settings}>
-            {filteredList.map((item) => (
-              <div className="project-item">
-                <div className="text-content">
-                  <h1 className="project-heading headings">{item.name}</h1>
-
-                  <a href="#" className="d-md-none mobile-link">
-                    Visit Website
-                  </a>
-                </div>
-                <div className="hover-cont">
-                  <div className="hover-text-cont">
-                    <div className="project-info d-none d-md-block">
-                      <span className="d-block inner-heading ">
-                        TECHNOLOGIES USED :{" "}
-                      </span>
-                      <ul className="tech-lists">
-                        {item.tech.map((item) => (
-                          <li className="tech-list-items">{item}</li>
+          {filteredList.length === 0 ? (
+            <div className="mt-5">
+              <p className="m-0 text-white fs-3 text-center">
+                No Projects Found.
+              </p>
+              <p className=" text-white fs-3 text-center m-0">
+                Try changing category
+              </p>
+            </div>
+          ) : (
+            <ul className="row justify-content-center">
+              {filteredList.map((item) => (
+                <div
+                  className={`${
+                    removePage ? "project-component-removed" : ""
+                  } project-item col-12 col-md-3 justify-content-around`}
+                  style={{ "--projOrder": item.id }}
+                >
+                  <h1 className="project-item-name fs-2">{item.name}</h1>
+                  <div className="project-details-box d-flex  w-100 justify-content-between">
+                    <div>
+                      <h1 className="project-tech-heading fs-6">
+                        TECHNOLOGIES USED
+                      </h1>
+                      <ul>
+                        {item.tech.map((library) => (
+                          <li>{library}</li>
                         ))}
                       </ul>
                     </div>
-                    <button className=" btn know-btn">
-                      <Link
-                        className="know-more-link"
-                        to={`/projects/${item.id}`}
-                      >
-                        Know More
-                      </Link>
-                    </button>
+                    <div className=" d-flex justify-content-center align-items-center">
+                      <button className="bg-secondary  border-0 p-1 px-2 rounded-3">
+                        <Link
+                          className="know-more-link text-white"
+                          to={`/projects/${item.id}`}
+                        >
+                          Know More
+                        </Link>
+                      </button>
+                    </div>
                   </div>
-                  <div className="hover-external-link-cont">
-                    {item.link !== undefined && (
-                      <div>
-                        <a className="link" href={item.link} target="_blank">
-                          Visit Website
-                        </a>
-                        <BsArrowRightCircle className="arrow-icon view-icon" />
-                      </div>
-                    )}
+                  <div className=" w-100 ">
+                    <a
+                      className="visit-website-anchor text-decoration-none text-dark"
+                      href={item.link}
+                    >
+                      VisitWebsite
+                      <BsFillArrowRightCircleFill className="mx-3" />
+                    </a>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </ul>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };

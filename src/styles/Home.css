@@ -1,71 +1,53 @@
-.landing-cont {
-    margin: 0px 0px 100px 0px;
+.home-cont {
+    background: var(--bgColor);
+    height: 100vh;
+    overflow-y: scroll;
 }
 
-.home-cont {
-    background-image: url("");
-    background-color: #1a1f61;
-    height: 100vh;
+
+.home-btn-link {
+    color: #1a1f61;
+    text-decoration: none;
+}
+
+.home-btn-link:hover {
+    color: #1a1f61;
 }
 
 .home-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    margin: 20px;
-    padding: 100px;
+    height: 84vh;
+    width: 85vw;
+    margin: auto !important;
 }
 
-.home-heading {
-    color: white;
-    font-size: 30px;
-    text-align: center;
-}
-
-.no-project-text {
-    position: relative;
-    left: 50%;
-    transform: translateX(-6%);
-    color: orange;
-    padding: 20px 0px;
-}
-
-.home-headings {
-    font-size: 1.4em;
-    display: inline-block;
-    padding-left: 15px;
-    color: rgb(41, 40, 40);
-}
-
-.home-headings::after {
-    content: '';
-    display: block;
-    background-color: black;
-    transform: scaleX(0);
-    height: 2px;
-    margin-top: 4px;
-    transition: transform .25s ease-in;
-    transform-origin: bottom right;
-}
-
-.home-headings:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+.home-text-cont {
+    animation: fromLeft .5s ease-in-out .2s forwards;
+    opacity: 0;
 }
 
 
-@media screen and (max-width:480px) {
-    .landing-cont {
-        height: 300px;
-        width: 100%;
-        padding: 2px;
-    }
+.home-img {
+    max-width: 1000px;
+}
 
-    .landing-heading {
-        font-size: 16px;
-        transform: translateY(-20px);
-    }
+.home-img-cont {
+    opacity: 0;
+    animation: fromRight .5s ease-in-out .2s forwards;
+}
 
-    .home-cont {
-        margin: 0px 0px 0px 5px;
-    }
+
+.home-btn {
+    background-color: #FFFFCC;
+    color: #1a1f61;
+    padding: 5px;
+    width: 120px;
+    border-radius: 5px;
+    border: none;
+    transition: all .2s linear;
+    font-weight: bold;
+}
+
+.home-btn:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transform: scale(1.05);
 }
