@@ -7,6 +7,12 @@
 
 }
 
+.single-project-cont {
+    background: var(--bgColor);
+    padding: 17px;
+    height: 100vh;
+}
+
 @keyframes det-animation {
     0% {
         opacity: 0;

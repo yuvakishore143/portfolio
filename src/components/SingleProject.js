@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import "../styles/ProjectDetails.css";
+import "../styles/Universal.css";
 
 const details = [
   {
@@ -72,10 +73,10 @@ const SingleProject = (props) => {
   console.log(id);
   const requiredDetails = details.filter((item) => item.id === id);
   return (
-    <>
-      <div className="d-flex back-btn-cont mt-4 me-5">
+    <div className="single-project-cont">
+      <div className="  d-flex back-btn-cont mt-4 me-5">
         <button className="back-btn btn btn-secondary ">
-          <Link to="/" className="back-link">
+          <Link to="/projects" className="back-link">
             Go Back
           </Link>
         </button>
@@ -98,7 +99,7 @@ const SingleProject = (props) => {
           <BsFillArrowRightCircleFill className="project-details-arrow-icon" />
         </a>
       </div>
-    </>
+    </div>
   );
 };
 
