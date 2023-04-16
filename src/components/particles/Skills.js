@@ -83,7 +83,7 @@ const Skills = () => {
   };
 
   const onAboutClick = () => {
-    navigate("/home");
+    navigate("/");
     setTimeout(() => {
       const aboutEl = document.querySelector("#aboutInHome");
       aboutEl.scrollIntoView({
