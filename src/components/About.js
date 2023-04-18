@@ -2,7 +2,7 @@ import "../styles/About.css";
 import Slider from "react-slick";
 import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 
-const About = ({ val }) => {
+const About = ({ val , isVisible }) => {
   const SamplePrevArrow = (props) => {
     const { className, style, onClick } = props;
 
@@ -30,22 +30,49 @@ const About = ({ val }) => {
     slidesToScroll: 1,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SamplePrevArrow />,
+    dotsClass: "slick-dots custom-dots",
+  
   };
   return (
     <div className="row about-page justify-content-between mb-3">
       <div
         className={` ${
           val ? "remove-right-exited" : ""
-        } about-img-cont col-md-5 d-flex justify-content-center align-items-center`}
+        } about-img-cont col-md-5 d-flex flex-column justify-content-center align-items-center`}
       >
         <img
           className="about-img"
-          src="https://smkn1empatlawang.sch.id/wp-content/uploads/2020/01/feature1.png"
+          src="me(crop).jpg"
         />
+        <h2 className={`${isVisible ? "about-name" : ""}`}>V. Yuva kishore</h2>
+        <p className={`${isVisible ? "about-role" : ""}`}>Full-stack Developer</p>
+        <div className={`${isVisible ? "about-social-cont" : "" } d-flex justify-content-around w-50`}>
+        <a
+                className="about-icons text-decoration-none text-dark"
+                target="_blank"
+                href="https://www.linkedin.com/in/yuva-kishore-vishwanath/"
+              >
+                <AiFillLinkedin className=" fs-4"/>
+              </a>
+        <a
+                className="about-icons text-decoration-none text-dark"
+                target="_blank"
+                href="https://www.instagram.com/yuvavishwanath/"
+              >
+                <AiFillInstagram className="about-icons fs-4"/>
+              </a>
+              <a
+                className="about-icons text-decoration-none text-dark"
+                target="_blank"
+                href="https://github.com/yuvakishore143"
+              >
+               <AiFillGithub className="about-icons fs-4" />
+              </a>
+        </div>
       </div>
-      <div className="col-md-6 m-auto">
+      <div className="col-md-6  slider-cont">
         <Slider
-          className={` ${val ? "remove-left-exited" : ""} sill-slider`}
+          className={` ${val ? "remove-left-exited" : ""} skill-slider`}
           {...settings}
         >
           <div className="slider-items item-2">

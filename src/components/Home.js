@@ -7,9 +7,13 @@ import About from "./About";
 import Header from "./Header";
 import { useState } from "react";
 import Footer from "./particles/Footer";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const Home = () => {
+  const animatedRef = useRef()
   const [removePage, setRemovePage] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const onAboutClick = () => {
     const aboutEl = document.querySelector("#aboutInHome");
@@ -25,8 +29,24 @@ const Home = () => {
     };
   };
 
+  useEffect(()=>{
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+          if(entry.isIntersecting){
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+
+      });
+      observer.observe(animatedRef.current);  
+    return ()=>{
+        observer.disconnect()
+    }
+  },[])
+
+
   return (
-    <>
       <div className="home-cont">
         <Header func={animationHandler} aboutFun={onAboutClick} />
         <div className="home-content row px-4 justify-content-between ">
@@ -83,14 +103,13 @@ const Home = () => {
             />
           </div>
         </div>
-        <div id="aboutInHome">
-          <About val={removePage} />
+        <div ref={animatedRef} id="aboutInHome">
+          <About val={removePage} isVisible={isVisible} />
         </div>
         <div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
-    </>
   );
 };
 

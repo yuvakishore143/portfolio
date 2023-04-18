@@ -26,6 +26,8 @@
 .about-img-cont {
     opacity: 0;
     animation: fromLeft .5s ease-in-out .2s forwards;
+    position: relative;
+    top: -100px;
 }
 
 .skill-slider {
@@ -34,16 +36,30 @@
     animation: fromRight .5s ease-in-out .2s forwards;
 }
 
+.slider-cont {
+    margin: 0px auto;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .about-page {
     width: 90vw;
-    margin: auto !important;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 20px;
     border-radius: 20px;
-
+    background-color: white;
+    position: relative;
+    height: 300px;
 }
 
 .about-img {
-    max-width: 500px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
 }
 
 .per-det {
@@ -57,4 +73,78 @@
 .about-ul li {
     text-align: center;
     padding: 2px;
+}
+
+.about-name {
+    opacity: 0;
+    animation: aboutFromBottom .8s linear forwards;
+}
+
+.about-role {
+    opacity: 0;
+    animation: aboutFromBottom .8s linear .5s forwards;
+}
+
+.about-social-cont {
+    opacity: 0;
+    animation: showOpacity .8s linear 1.4s forwards;
+}
+
+@keyframes showOpacity {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+
+}
+
+
+.about-icons:hover {
+    animation: upAndDown .3s linear forwards;
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(-10%);
+    }
+
+    90% {
+        transform: translateY(5%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+
+
+@keyframes aboutFromBottom {
+
+    0% {
+        opacity: 0;
+        transform: translateY(100%)
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+
+    ;
+}
+
+.slick-dots {
+    bottom: 0px !important;
 }

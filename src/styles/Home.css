@@ -2,6 +2,7 @@
     background: var(--bgColor);
     height: 100vh;
     overflow-y: scroll;
+    position: relative;
 }
 
 
@@ -50,4 +51,8 @@
 .home-btn:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transform: scale(1.05);
+}
+
+#aboutInHome {
+    margin-top: 200px;
 }
