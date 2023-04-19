@@ -10,7 +10,6 @@ import Projects from "./components/particles/Projects";
 function App() {
   return (
     <div className="App">
-      {/* <Header /> */}
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/skills" element={<Skills />} />
@@ -19,7 +18,10 @@ function App() {
         <Route exact path="/projects/:id" element={<SingleProject />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <div className="footer-whole-cont">{/* <Footer /> */}</div>
+      <div className="notification">
+        <p>Welcome to my Website</p>
+        <span className="notification_progress"></span>
+      </div>
     </div>
   );
 }

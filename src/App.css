@@ -4,8 +4,66 @@
   color: black;
 }
 
-body {}
-
 .headings {
   color: rgb(66, 62, 62);
+}
+
+
+.notification {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  width: max-content;
+  /* background-color: #141619; */
+  background-color: #082691;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(30px);
+  opacity: 0;
+  visibility: hidden;
+  animation: fade-in 4s linear forwards;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.notification p {
+  color: #f6f5f9;
+}
+
+
+
+.notification_progress {
+  position: absolute;
+  display: block;
+  left: 5px;
+  bottom: 5px;
+  width: calc(100% - 10px);
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(to right, #559bdb, #3250bf);
+  border-radius: inherit;
+  animation: load 3s 0.25s linear forwards;
+}
+
+
+
+@keyframes fade-in {
+  5% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes load {
+  to {
+    transform: scaleX(1);
+  }
+
 }
