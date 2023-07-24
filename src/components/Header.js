@@ -30,7 +30,6 @@ const Header = ({ func, aboutFun }) => {
     <div className="header-cont">
       <div className="d-flex align-items-center gap-3 ">
         <img src="initial.png" className="logo" />
-        <p className="open-to-work">: : Open for work : :</p>
       </div>
       <div className="d-flex gap-3 align-items-center">
         <NavLink

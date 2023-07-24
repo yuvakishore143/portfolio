@@ -45,7 +45,7 @@ const About = ({ val , isVisible }) => {
           src="me(crop).jpg"
         />
         <h2 className={`${isVisible ? "about-name" : ""}`}>V. Yuva kishore</h2>
-        <p className={`${isVisible ? "about-role" : ""}`}>Full-stack Developer</p>
+        <p className={`${isVisible ? "about-role" : ""}`}>Software Trainee at Helical It solutions</p>
         <div className={`${isVisible ? "about-social-cont" : "" } d-flex justify-content-around w-50`}>
         <a
                 className="about-icons text-decoration-none text-dark"
